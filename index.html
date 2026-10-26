@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- strict CSP: only our own scripts run; the only outside connection allowed is the FDA drug-label API -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://api.fda.gov; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'self'; manifest-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="no-referrer">
+  <title>CareClock</title>
+  <meta name="description" content="CareClock helps older adults and their families keep track of medicines: simple reminders, refill alerts, FDA label safety checks, and a doctor-ready report. Free, private, works offline, in 6 languages.">
+  <meta name="theme-color" content="#162e51">
+  <meta name="color-scheme" content="light dark">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="preload" href="fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CareClock">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="vendor/qrcode.js" defer></script>
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <header class="appbar">
+    <div class="appbar-inner">
+      <a class="brand" href="#/today"><img src="icons/icon.svg" alt="" width="28" height="28">CareClock</a>
+      <span class="appbar-clock" id="clock" aria-hidden="true"></span>
+    </div>
+  </header>
+  <main id="main" tabindex="-1">
+    <noscript><p style="padding:2rem;font-size:1.25rem">CareClock needs JavaScript turned on.</p></noscript>
+  </main>
+  <nav id="nav" aria-label="Main"></nav>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="dialog" aria-modal="true"></dialog>
+</body>
+</html>

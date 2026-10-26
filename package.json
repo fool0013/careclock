@@ -1,0 +1,13 @@
+{
+  "name": "careclock",
+  "version": "1.0.0",
+  "description": "Medicine reminders, refill alerts and FDA safety checks for older adults and caregivers. Installable, offline, private, 6 languages.",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test"
+  },
+  "license": "MIT"
+}
